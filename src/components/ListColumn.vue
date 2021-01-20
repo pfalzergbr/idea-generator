@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column list-column">
     <list-header :ideas="ideas" @add-idea="newIdea"></list-header>
     <idea-list :ideas="ideas"></idea-list>
   </div>
@@ -19,5 +19,10 @@ export default {
   },
 };
 </script>
-
-<style></style>
+<style>
+  .list-column {
+  /* display: grid; */
+  /* grid-row: 1 /2 ;
+  grid-column: 2/ 3; */
+  }
+</style>

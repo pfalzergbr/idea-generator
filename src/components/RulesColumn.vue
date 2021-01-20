@@ -17,7 +17,8 @@ export default {
 
 <style>
   .rules-column {
-    grid-row: 2 / 3;
-    grid-column: 2/3 ;
+    /* display: grid; */
+    /* grid-row: 1 / 2; 
+    grid-column: 1/ 2 ;  */
   }
 </style>
