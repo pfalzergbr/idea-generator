@@ -24,7 +24,6 @@ export default {
 
 <style lang="scss" scoped>
   ol {  
-    // width: 80%;
     display: block;
     margin-left: 2rem;
 

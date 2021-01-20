@@ -1,10 +1,11 @@
 <template>
   <div class="column list-column">
-      <!-- <the-question @new-question="addQuestion"></the-question> -->
-    <div>
-      <ideas-header :question="question" :ideas="ideas" @add-idea="newIdea"></ideas-header>
+    <div v-if="question === ''">
+      <the-question @new-question="addQuestion"></the-question>
+    </div>
+    <div v-else>
+      <ideas-header :question="question" :ideas="ideas" @add-idea="AddIdea"></ideas-header>
       <idea-list :ideas="ideas"></idea-list>
-      <the-question></the-question>
     </div>
   </div>
 </template>
@@ -16,12 +17,30 @@ import TheQuestion from './TheQuestion'
 
 export default {
   components: { IdeasHeader, IdeaList, TheQuestion },
-  props: ['ideas', 'question'],
-  methods: {
-    newIdea(idea) {
-      this.$emit('add-idea', idea);
-    },
+  data() {
+    return {
+      ideas: [],
+      chosenIdea: '',
+      question: '',
+    };
   },
+  methods: {
+    addIdea(idea) {
+      const newIdea = {
+        id: new Date().toISOString,
+        idea,
+      };
+      this.ideas.push(newIdea);
+    },
+    addQuestion(question){
+      this.question = question;
+    }
+  },
+  computed: {
+    filledIdeas() {
+      return this.ideas.length === 20 ? true : false;
+    },
+  }
 };
 </script>
 <style>

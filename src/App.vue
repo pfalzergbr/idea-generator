@@ -1,8 +1,7 @@
 <template>
   <div class="app">
-    <rules-column @new-question="addQuestion"></rules-column>
-    <ideas-column :question="question" :ideas="ideas" @add-idea="addIdea"></ideas-column>
-    <idea-box v-if="filledIdeas"></idea-box>
+    <rules-column></rules-column>
+    <ideas-column></ideas-column>
   </div>
 </template>
 
@@ -17,30 +16,7 @@ export default {
     RulesColumn,
     IdeasColumn,
   },
-  data() {
-    return {
-      ideas: [],
-      chosenIdea: '',
-      question: '',
-    };
-  },
-  methods: {
-    addIdea(idea) {
-      const newIdea = {
-        id: new Date().toISOString,
-        idea,
-      };
-      this.ideas.push(newIdea);
-    },
-    addQuestion(question){
-      this.question = question;
-    }
-  },
-  computed: {
-    filledIdeas() {
-      return this.ideas.length === 20 ? true : false;
-    },
-  },
+  
 };
 </script>
 
