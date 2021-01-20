@@ -20,7 +20,7 @@ export default {
     submitQuestion() {
       this.error = null;
       if (this.question) {
-        this.$emit('newQuestion', this.question);
+        this.$emit('new-question', this.question);
       } else {
         this.error = 'You need to ask first...'
       }
@@ -32,17 +32,6 @@ export default {
 <style lang="scss" scoped>
 .the-question {
   display: flex;
-
-  // &__btn {
-  //   background: #F7D1A8;
-  //   font-size: 1.6rem;
-  //   text-transform: uppercase;
-  //   transition: all .2s;
-
-  // &:hover , &:focus {
-  //   background: #ec9432;
-  // }
-  // }
 
   &__question {
     margin-bottom: 2rem;

@@ -1,22 +1,21 @@
 <template>
   <div class="app">
-    <rules-column></rules-column>
-    <list-column :ideas="ideas" @add-idea="addIdea"></list-column>
+    <rules-column @new-question="addQuestion"></rules-column>
+    <ideas-column :question="question" :ideas="ideas" @add-idea="addIdea"></ideas-column>
     <idea-box v-if="filledIdeas"></idea-box>
   </div>
 </template>
 
 <script>
-import ListColumn from './components/ListColumn.vue';
-import RulesColumn from './components/RulesColumn';
-import IdeaBox from './components/IdeaBox';
+import IdeasColumn from './components/Ideas/IdeasColumn.vue';
+import RulesColumn from './components/Rules/RulesColumn';
+
 
 export default {
   name: 'App',
   components: {
     RulesColumn,
-    ListColumn,
-    IdeaBox,
+    IdeasColumn,
   },
   data() {
     return {
@@ -33,6 +32,9 @@ export default {
       };
       this.ideas.push(newIdea);
     },
+    addQuestion(question){
+      this.question = question;
+    }
   },
   computed: {
     filledIdeas() {
@@ -137,7 +139,8 @@ button {
 .app {
   min-height: 75vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: 75vh;
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;

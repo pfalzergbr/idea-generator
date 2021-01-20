@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <list-progress></list-progress>
+  <div class="list__header">
+    <ideas-title></ideas-title>
+    <ideas-progress></ideas-progress>
     <idea-counter :numOfIdeas="numOfIdeas"></idea-counter>
     <add-idea v-if="numOfIdeas !== 20 ? true : false" @add-idea="newIdea"></add-idea>
     <div v-else>Good job!</div>
@@ -8,15 +9,17 @@
 </template>
 
 <script>
-import ListProgress from './ListProgress';
+import IdeasProgress from './IdeasProgress';
 import IdeaCounter from './IdeaCounter';
 import AddIdea from './AddIdea.vue';
+import IdeasTitle from './IdeasTitle'
 
 export default {
   components: {
-    ListProgress,
+    IdeasProgress,
     IdeaCounter,
     AddIdea,
+    IdeasTitle
   },
   props: ['ideas'],
   computed: {
