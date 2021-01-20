@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ul>
+
+    <ul class="ideas-field">
       <idea-item
         v-for="(idea, index) in ideas"
         :key="idea.id"
@@ -8,7 +8,7 @@
         :index="index"
       ></idea-item>
     </ul>
-  </div>
+
 </template>
 
 <script>
@@ -22,4 +22,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  .ideas-field {
+    width: 100%;
+    height: 100%;
+  }
+</style>

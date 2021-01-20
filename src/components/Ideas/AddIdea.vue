@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="add-idea">
     <form @submit.prevent="onSubmit">
       <label for="Next Idea"></label>
       <input type="text" name="newIdea" v-model="newIdea"/>
@@ -24,4 +24,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  form {
+    display: flex;
+    width: 100%;
+    input {
+      flex: 1 ;
+      margin-bottom: 2rem;
+    }
+  }
+
+</style>

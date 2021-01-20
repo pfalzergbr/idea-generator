@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="header__counter">
       <p>{{numOfIdeas}} items on the list, {{ideasLeft}} more to go!</p>
     </div>
 </template>
@@ -15,6 +15,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .header__counter {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    
+  }
 
 </style>

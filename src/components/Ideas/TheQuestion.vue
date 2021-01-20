@@ -4,6 +4,7 @@
       <h2 class="the-question__question">How can I...</h2>
       <textarea v-model.trim="question"></textarea>
       <button class="the-question__btn" @click="submitQuestion">Start</button>
+      <p v-if="error" class="error">{{ error }}</p>
     </div>
   </div>
 </template>
@@ -13,7 +14,7 @@ export default {
   data() {
     return {
       question: '',
-      error: null
+      error: null,
     };
   },
   methods: {
@@ -22,7 +23,7 @@ export default {
       if (this.question) {
         this.$emit('new-question', this.question);
       } else {
-        this.error = 'You need to ask first...'
+        this.error = 'Please type in your question first';
       }
     },
   },
@@ -32,6 +33,9 @@ export default {
 <style lang="scss" scoped>
 .the-question {
   display: flex;
+  &__btn {
+    margin-bottom: 1.5rem;
+  }
 
   &__question {
     margin-bottom: 2rem;
@@ -45,6 +49,9 @@ export default {
       margin-bottom: 2rem;
       padding: 1rem;
     }
+  }
+  .error {
+    color: red;
   }
 }
 </style>

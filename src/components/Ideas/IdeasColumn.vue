@@ -3,9 +3,10 @@
     <div v-if="question === ''">
       <the-question @new-question="addQuestion"></the-question>
     </div>
-    <div v-else>
-      <ideas-header :question="question" :ideas="ideas" @add-idea="AddIdea"></ideas-header>
-      <idea-list :ideas="ideas"></idea-list>
+    <div class="ideas-container" v-else>
+      <ideas-header :question="question" :ideas="ideas" @add-idea="addIdea"></ideas-header>
+      <idea-list v-if="ideas.length !== 0" :ideas="ideas"></idea-list>
+      <p class="no-ideas" v-else> No ideas yet. Add some to the list!</p>
     </div>
   </div>
 </template>
@@ -43,6 +44,16 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss" scoped>
+  .ideas-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .no-ideas {
+    margin-left: 1rem;
+  }
 
 </style>

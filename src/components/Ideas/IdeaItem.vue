@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <span>{{number}}</span>
+  <li>
+    <span>{{number}}. </span>
     <span>{{idea}}</span>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -16,4 +16,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  li {
+    list-style: none;
+    padding: .25rem;
+    font-size: 1.2rem;
+  }
+  
+</style>

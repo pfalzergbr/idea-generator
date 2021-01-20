@@ -32,7 +32,7 @@ $color-grey-dark-1: #423e34;
 $color-grey-dark-2: #1d1c19;
 $color-purple-medium: #c7abde;
 
-$font-size-sm: 1rem;
+$font-size-sm: 1.2rem;
 $font-size-md: 1.6rem;
 $font-size-lg: 2.4rem;
 $font-size-xl: 3.2rem;

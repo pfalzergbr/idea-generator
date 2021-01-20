@@ -1,7 +1,7 @@
 <template>
-  <div class="header">
+  <div class="header__title">
     <Icon :icon="icons.light" :style="{ fontSize: '32px' }" />
-    <h2 class="header__title">Header</h2>
+    <h2 class="header__title">How can I {{question}}?</h2>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { Icon } from '@iconify/vue';
 import lightBulb from '@iconify/icons-heroicons-outline/light-bulb';
 
 export default {
-  props: [],
+  props: ['question'],
   components: {
     Icon,
   },
@@ -25,12 +25,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header__title {
   display: flex;
 
-  &__title {
+  h2 {
     margin-left: 2rem;
-
+    font-weight: 400;
+    margin-bottom: 2rem;
   }
 }</style
 >>
