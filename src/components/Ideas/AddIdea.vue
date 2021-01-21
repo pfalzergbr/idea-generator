@@ -28,9 +28,9 @@ export default {
   form {
     display: flex;
     width: 100%;
+      margin-bottom: 2rem;
     input {
       flex: 1 ;
-      margin-bottom: 2rem;
     }
   }
 

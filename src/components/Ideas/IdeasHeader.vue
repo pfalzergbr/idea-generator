@@ -3,7 +3,7 @@
     <ideas-title :question="question"></ideas-title>
     <idea-counter :numOfIdeas="numOfIdeas"></idea-counter>
     <add-idea v-if="numOfIdeas !== 20 ? true : false" @add-idea="newIdea"></add-idea>
-    <div v-else>Good job!</div>
+
   </div>
 </template>
 

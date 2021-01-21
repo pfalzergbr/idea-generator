@@ -1,7 +1,7 @@
 <template>
   <li>
-    <span>{{number}}. </span>
-    <span>{{idea}}</span>
+    <span class="number">{{number}}. </span>
+    <span class="idea">{{idea}}</span>
   </li>
 </template>
 
@@ -21,6 +21,12 @@ export default {
     list-style: none;
     padding: .25rem;
     font-size: 1.2rem;
+
+    .number {
+      margin-right: 1rem;
+    }
   }
+
+
   
 </style>

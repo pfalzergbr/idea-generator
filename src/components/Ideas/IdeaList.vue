@@ -2,6 +2,7 @@
 
     <ul class="ideas-field">
       <idea-item
+        class="idea-item"
         v-for="(idea, index) in ideas"
         :key="idea.id"
         :idea="idea.idea"
@@ -25,6 +26,10 @@ export default {
 <style lang="scss" scoped>
   .ideas-field {
     width: 100%;
-    height: 100%;
+  }
+  
+
+  .idea-item {
+    padding: .5rem;
   }
 </style>

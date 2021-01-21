@@ -113,11 +113,11 @@ button {
 }
 
 .app {
-  min-height: 75vh;
+  min-height: 90vh;
   display: grid;
   // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-columns: 2fr 3fr;
-  grid-template-rows: 75vh;
+  grid-template-rows: 90vh;
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
   margin: 5rem;
