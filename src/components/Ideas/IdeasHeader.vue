@@ -2,8 +2,7 @@
   <div class="header">
     <ideas-title :question="question"></ideas-title>
     <idea-counter :numOfIdeas="numOfIdeas"></idea-counter>
-    <add-idea v-if="numOfIdeas !== 20 ? true : false" @add-idea="newIdea"></add-idea>
-
+    <add-idea :numOfIdeas="numOfIdeas" @add-idea="newIdea"></add-idea>
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
     AddIdea,
     IdeasTitle
   },
-  props: ['ideas', 'question'],
+  props: ['ideas', 'question', ],
   computed: {
     numOfIdeas() {
       return this.ideas.length;

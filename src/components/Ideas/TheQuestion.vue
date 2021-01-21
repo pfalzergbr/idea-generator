@@ -33,6 +33,7 @@ export default {
 <style lang="scss" scoped>
 .the-question {
   display: flex;
+
   &__btn {
     margin-bottom: 1.5rem;
   }

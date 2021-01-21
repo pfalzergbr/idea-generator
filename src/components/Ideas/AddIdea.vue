@@ -2,8 +2,8 @@
   <div class="add-idea">
     <form @submit.prevent="onSubmit">
       <label for="Next Idea"></label>
-      <input type="text" name="newIdea" v-model="newIdea"/>
-      <button>Add Idea</button>
+      <input :disabled="fullOfIdeas" type="text" name="newIdea" v-model="newIdea"/>
+      <button :disabled='fullOfIdeas'>Add Idea</button>
     </form>
   </div>
 </template>
@@ -11,6 +11,7 @@
 <script>
 
 export default {
+  props: ['numOfIdeas'],
   data(){
     return {
       newIdea: ''
@@ -18,7 +19,15 @@ export default {
   }, 
   methods: {
     onSubmit(){
-      this.$emit('add-idea', this.newIdea);
+      if (this.newIdea !== '') {
+        this.$emit('add-idea', this.newIdea);
+        this.newIdea = '';
+      }
+    }
+  },
+  computed: {
+    fullOfIdeas() {
+      return this.numOfIdeas.length === 20 ? true : false; 
     }
   }
 };
@@ -31,6 +40,14 @@ export default {
       margin-bottom: 2rem;
     input {
       flex: 1 ;
+
+      &[disabled] {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+    button[disabled] {
+        background: rgba(0, 0, 0, 0.7);
+
     }
   }
 
