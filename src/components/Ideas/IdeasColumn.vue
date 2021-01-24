@@ -1,9 +1,9 @@
 <template>
   <div class="column list-column">
     <!-- <div v-if="question === ''"> -->
-      <the-question v-if="question === ''" @new-question="addQuestion"></the-question>
+
     <!-- </div> -->
-    <div class="ideas-container" v-else>
+    <div class="ideas-container">
       <ideas-header :question="question" :ideas="ideas" @add-idea="addIdea"></ideas-header>
       <idea-list v-if="ideas.length !== 0" :ideas="ideas"></idea-list>
       <p class="no-ideas" v-else> No ideas yet. Add some to the list!</p>
@@ -15,16 +15,16 @@
 <script>
 import IdeasHeader from './IdeasHeader.vue';
 import IdeaList from './IdeaList.vue';
-import TheQuestion from './TheQuestion'
+
 import ChooseIdea from './ChooseIdea';
 
 export default {
-  components: { IdeasHeader, IdeaList, TheQuestion, ChooseIdea },
+  props: ['question'],
+  components: { IdeasHeader, IdeaList, ChooseIdea },
   data() {
     return {
       ideas: [],
       chosenIdea: '',
-      question: '',
     };
   },
   methods: {
@@ -35,9 +35,6 @@ export default {
       };
       this.ideas.push(newIdea);
     },
-    addQuestion(question){
-      this.question = question;
-    }
   },
   computed: {
     filledIdeas() {

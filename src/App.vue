@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <rules-column></rules-column>
-    <ideas-column v-if="false"></ideas-column>
+    <rules-column v-if="!question" @new-question="addQuestion"></rules-column>
+    <ideas-column v-if="question" :question="question"></ideas-column>
   </div>
 </template>
 
@@ -9,14 +9,22 @@
 import IdeasColumn from './components/Ideas/IdeasColumn.vue';
 import RulesColumn from './components/Rules/RulesColumn';
 
-
 export default {
   name: 'App',
   components: {
     RulesColumn,
     IdeasColumn,
   },
-  
+  data() {
+    return {
+      question: ''
+    }
+  },
+  methods: {
+    addQuestion(question) {
+      this.question = question;
+    },
+  },
 };
 </script>
 
@@ -130,12 +138,10 @@ button {
   background: $color-orange-light-3;
   padding: 5rem;
   height: 100vh;
-    
+
   @media (min-width: 600px) {
-  border-radius: 1rem;
-  height: 100%;
+    border-radius: 1rem;
+    height: 100%;
   }
-
-
 }
 </style>
