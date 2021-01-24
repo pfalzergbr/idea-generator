@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <rules-column></rules-column>
-    <ideas-column></ideas-column>
+    <ideas-column v-if="false"></ideas-column>
   </div>
 </template>
 
@@ -115,15 +115,13 @@ button {
 .app {
   min-height: 90vh;
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 90vh;
-  grid-column-gap: 2.5rem;
-  grid-row-gap: 2.5rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: minmax(90vh min-conent);
   margin: 5rem;
 }
 
 .column {
+  grid-column: 2/ 3;
   background: $color-orange-light-3;
   padding: 5rem;
   border-radius: 1rem;
