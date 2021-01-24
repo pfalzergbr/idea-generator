@@ -14,6 +14,5 @@ export default {
 <style>
   h2 {
     display: block;
-    width: 70%;
   }
 </style>

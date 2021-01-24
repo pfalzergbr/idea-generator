@@ -115,15 +115,27 @@ button {
 .app {
   min-height: 90vh;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: minmax(90vh min-conent);
-  margin: 5rem;
+  grid-template-columns: 1fr;
+  // grid-template-rows: 100vh;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 4rem 0;
+    grid-template-rows: minmax(90vh min-conent);
+  }
 }
 
 .column {
   grid-column: 2/ 3;
   background: $color-orange-light-3;
   padding: 5rem;
+  height: 100vh;
+    
+  @media (min-width: 600px) {
   border-radius: 1rem;
+  height: 100%;
+  }
+
+
 }
 </style>
